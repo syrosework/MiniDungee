@@ -1,0 +1,11 @@
+{
+  "name": "minidungee",
+  "version": "0.0.1",
+  "description": "Lil game project to test our techs  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "YoAndSav",
+  "license": "ISC"
+}
