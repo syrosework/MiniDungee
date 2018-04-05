@@ -1,8 +1,5 @@
-import * as PIXI from 'pixi.js'
-
 export default function() {
-    const app = new PIXI.Application();
+    const app = new PIXI.Application({ width: 800, height: 600 });
 
-
-    // Великая игра начинается здесь
+    document.body.appendChild(app.view);
 }

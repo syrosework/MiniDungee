@@ -16,7 +16,17 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.ts', '.json'],
+        extensions: ['.js', '.ts', '.json'],
     },
-    watch: true
+    devServer: {
+        stats : 'errors-only',
+        publicPath : '/build/',
+        open: true
+    },
+
+    externals: [
+        // Don't bundle pixi.js, assume it'll be included in the HTML via a script
+        // tag, and made available in the global variable PIXI.
+        {"pixi.js": "PIXI"}
+    ]
 };
