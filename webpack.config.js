@@ -11,7 +11,10 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                exclude: /node_modules/
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'assets/scripts/typings'),
+                ]
             },
             {
                 test: /\.(png|jpg|svg)$/,
@@ -27,7 +30,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.ts', '.json'],
+        extensions: ['.js', '.d.ts' , '.ts', '.json'],
     },
     devServer: {
         stats : 'errors-only',

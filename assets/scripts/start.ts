@@ -1,10 +1,10 @@
 import * as PIXI from 'pixi.js';
-import lolbled from '../images/lolbled.png';
+import someImage from '../images/some-image.png';
 
 export default function() {
     const app = new PIXI.Application({ width: 800, height: 600 });
 
-    console.log(lolbled)
+    console.log(someImage)
 
     document.body.appendChild(app.view);
 }
