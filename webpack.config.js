@@ -1,30 +1,22 @@
-const
-    argv = require('yargs').argv;
-
-const
-    PRODUCTION = !!argv.production;
+const path = require('path');
 
 module.exports = {
-    entry: './assets/scripts/index.js',
+    entry: './assets/scripts/index.ts',
     output: {
-        filename: '[name].js',
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
             {
-                test: /\.js/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015']
-                    }
-                },
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
         ],
     },
     resolve: {
-        extensions: ['.js', '.json'],
+        extensions: ['.ts', '.json'],
     },
-    devtool: (PRODUCTION ? '' : 'source-map')
+    watch: true
 };
