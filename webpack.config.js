@@ -30,7 +30,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.d.ts' , '.ts', '.json'],
+        extensions: ['.js', '.ts', '.json'],
     },
     devServer: {
         stats : 'errors-only',
